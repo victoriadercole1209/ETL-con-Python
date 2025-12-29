@@ -20,14 +20,21 @@ El objetivo del proyecto es:
 
 ## ▶️ Cómo ejecutar el proyecto
 
-1. Clonar el repositorio  
-2. Instalar dependencias:
+### 1. Clonar el repositorio  
+
+```bash
+git clone https://github.com/victoriadercole1209/ETL-con-Python.git
+cd ETL-con-Python
+```
+
+### 2. Instalar dependencias:
 
 ```bash
 pip install pandas pyarrow
+```
 
-
-Ejecutar el script ETL:
+### 3. Ejecutar el script ETL:
+```
 python etl.py
 ```
 
@@ -91,20 +98,18 @@ Conversión de order_date a datetime
 
  
 # 📂 Estructura del proyecto
-mi-primer-etl/
-│
+```
+ETL-con-Python/
 ├── data/
 │   └── ecommerce_*.csv
-│
 ├── output/
 │   ├── ventas_por_cliente.csv
 │   ├── ventas_por_mes.csv
 │   ├── orders_clean.csv
 │   └── orders_clean.parquet
-│
 ├── etl.py
 └── README.md
-
+```
 
 ✍️ Autor: 
 Maria Victoria D'Ercole
