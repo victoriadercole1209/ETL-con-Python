@@ -4,7 +4,7 @@
 Este proyecto implementa un pipeline **ETL (Extract, Transform, Load)** en Python
 sobre un dataset de e-commerce.
 
-El objetivo es:
+El objetivo del proyecto es:
 - Limpiar y preparar datos
 - Responder preguntas de negocio reales
 - Generar outputs listos para análisis y reporting
@@ -20,75 +20,77 @@ El objetivo es:
 
 ## ▶️ Cómo ejecutar el proyecto
 
-1. Clonar el repositorio
+1. Clonar el repositorio  
 2. Instalar dependencias:
 
 ```bash
 pip install pandas pyarrow
 
 
-Ejecutar el script:
+Ejecutar el script ETL:
 python etl.py
+```
 
 
-
-
-🧪 Flujo ETL
-🔹 Extract
-
+# 🧪 Flujo ETL
+## 🔹 Extract
 Lectura de archivos CSV desde la carpeta data/.
 
 Tablas principales:
 
-orders
+- orders
+- order_items
+- customers
+- products
 
-order_items
 
-customers
+## 🔹 Transform
 
-products
+- Exploración inicial: 
 
-🔹 Transform
+  - head(), info()
 
-Exploración inicial (head, info, conteo de nulos)
+  - Conteo de valores nulos
 
-Manejo de nulos:
+- Manejo de nulos:
 
-Eliminación de filas con campos críticos faltantes
+  - Eliminación de filas con campos críticos faltantes
 
-Relleno de campos opcionales (promotion_id, notes)
+  - Relleno de campos opcionales (promotion_id, notes)
 
-Duplicados:
+- Duplicados: 
 
-Verificación y eliminación por order_id
+  - Verificación y eliminación por order_id
 
-Tipos de datos:
+- Tipos de datos:
 
 Conversión de order_date a datetime
 
-Análisis de negocio:
+- Análisis de negocio:
 
-Top 5 clientes por gasto
+  - Top 5 clientes por gasto total
 
-Producto más vendido por cantidad
+  - Producto más vendido por cantidad
 
-Evolución mensual de ventas
+  - Evolución mensual de ventas
+ 
 
-🔹 Load
+## 🔹 Load
 
-Exportación a CSV:
+- Exportación a CSV:
 
-ventas_por_cliente.csv
+  - ventas_por_cliente.csv
 
-ventas_por_mes.csv
+  - ventas_por_mes.csv
 
-orders_clean.csv
+  - orders_clean.csv
 
-Exportación a Parquet:
+- Exportación a Parquet:
 
-orders_clean.parquet
+  - orders_clean.parquet
 
-📂 Estructura del proyecto
+ 
+# 📂 Estructura del proyecto
 mi-primer-etl/
 │
 ├── data/
@@ -103,6 +105,6 @@ mi-primer-etl/
 ├── etl.py
 └── README.md
 
-✍️ Autor
 
-Marisa Victoria D'Ercole
+✍️ Autor: 
+Maria Victoria D'Ercole
