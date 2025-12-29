@@ -1,0 +1,12 @@
+# Datos crudos
+data/
+
+# Outputs generados
+output/
+
+# Archivos de entorno
+.env
+
+# Cache de Python
+__pycache__/
+*.pyc
