@@ -120,12 +120,6 @@ print(df_orders_clean.dtypes)
 print("\n Nulos después de conversión de tipos:")
 print(df_orders_clean.isnull().sum())
 
-# HASTA AHORA:
-#- Se verificó la existencia de archivos en la carpeta `data/`
-#- Se manejaron valores nulos según criticidad del campo
-#- No se encontraron duplicados por `order_id`
-#- Se convirtió `order_date` a datetime
-
 
 
 
