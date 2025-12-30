@@ -4,9 +4,7 @@ import os
 print("Iniciando ETL E-commerce")
 
 
-#################################
 # PASO 1 - EXTRACT (Cargar datos)
-#################################
 
 
 DATA_PATH = "data"  # Carpeta donde están los CSV
@@ -26,9 +24,9 @@ df_customers = pd.read_csv(os.path.join(DATA_PATH, "ecommerce_customers.csv"))
 df_products = pd.read_csv(os.path.join(DATA_PATH, "ecommerce_products.csv"))
 
 
-################################
+
 # PASO 2 - CARGA Y EXPLORACIÓN
-################################
+
 
 
 print("\n Resumen:")
@@ -45,9 +43,9 @@ print(df_orders.info())
 
 
 
-######################################
+
 # PASO 3 - TRANSFORM: Manejo de nulos
-######################################
+
 
 
 
@@ -60,7 +58,7 @@ df_orders_clean = df_orders.dropna(
     subset=["order_id", "customer_id", "order_date", "total_amount"]
 )
 
-# Campos opcionales : se rellenan
+# Campos opcionales: se rellenan
 df_orders_clean["promotion_id"] = df_orders_clean["promotion_id"].fillna(0)
 df_orders_clean["notes"] = df_orders_clean["notes"].fillna("")
 
@@ -74,9 +72,9 @@ print(f" Filas después: {len(df_orders_clean)}")
 
 
 
-################################
+
 # TRANSFORM: Duplicados
-################################
+
 
 
 
@@ -97,9 +95,9 @@ df_orders_clean = df_orders_clean.drop_duplicates(
 
 
 
-#####################################
+
 # PASO 6 - TRANSFORM: Tipos de datos
-#####################################
+
 
 
 
@@ -125,9 +123,9 @@ print(df_orders_clean.isnull().sum())
 
 
 
-#########################################################
+
 # PASO 7 -  TRANSFORM - Respondé preguntas de negocio
-#########################################################
+
 
 
 
@@ -194,9 +192,9 @@ print("\n Ventas mes a mes:")
 print(ventas_mes)
 
 
-#################################
+
 #PASO 8 :  LOAD - Guardá en CSV
-#################################
+
 
 # Crear carpeta output si no existe
 import os
@@ -212,9 +210,9 @@ df_orders_clean.to_csv('output/orders_clean.csv', index=False)
 print(" Archivos CSV guardados en output/")
 
 
-#########################################################
+
 # Paso 9 : LOAD - Guardár en Parquet (formato profesional)
-#########################################################
+
 
 
 #Instalar pyarrow en caso de no tenerlo : pip install pyarrow
